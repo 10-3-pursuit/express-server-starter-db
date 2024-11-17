@@ -4,11 +4,15 @@ const musicController = require("./controllers/musicController");
 const quoteController = require("./controllers/quoteController");
 const app = express();
 
-app.use(cors());
-app.use(express.json());
 
 app.use("/songs", musicController);
 app.use("/quote", quoteController);
+
+
+app.use(cors());
+app.use(express.json());
+
+
 
 // ROUTES
 app.get("/", (_req, res) => {

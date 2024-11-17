@@ -2,7 +2,7 @@ const express = require("express");
 const music = express.Router();
 const { getAllSongs, createSong, deleteSong } = require("../queries/music");
 
-music.get("/", async (req, res) => {
+music.get("/", async (_req, res) => {
 
   const allSongs = await getAllSongs();
   if (allSongs[0]) {
@@ -13,8 +13,8 @@ music.get("/", async (req, res) => {
 });
 
 music.post("/", async (req, res) => {
-  console.log("hit POST /songs");
-  const newSong = await createSong(req.body);
+
+  const newSong = await createSongs(req.params);
   if (newSong.id) {
     res.status(200).json(newSong);
   } else {
