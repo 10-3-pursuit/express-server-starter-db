@@ -1,6 +1,13 @@
-DROP DATABASE IF EXISTS myDB -- change name of db
-CREATE DATABASE myDB -- change name of db
+DROP DATABASE IF EXISTS song_tracker;
+CREATE DATABASE song_tracker;
 
-\c myDB -- change name of db
+\c song_tracker;
 
--- Create your tables here
+DROP TABLE IF EXISTS songs;
+
+CREATE TABLE songs (
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    artist TEXT NOT NULL,
+    genre TEXT NOT NULL
+);
