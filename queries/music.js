@@ -1,7 +1,7 @@
 const db = require("../db/dbConfig");
 
 const getAllSongs = async () => {
-  console.log("hit getAll songs");
+  
   try {
     const allSongs = await db.any("SELECT * FROM songs");
     return allSongs;
